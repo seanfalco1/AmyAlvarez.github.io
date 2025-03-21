@@ -97,17 +97,19 @@
     <nav>
         <div class="nav-name">Amy Alvarez</div>
         <ul>
-            <li><a style="text-decoration: none; color: #4682B4;" href="#about">About</a></li>
-            <li><a style="text-decoration: none; color: #4682B4;" href="#research">Research</a></li>
-            <li><a style="text-decoration: none; color: #4682B4;" href="#projects">Projects</a></li>
-                        <li><a style="text-decoration: none; color: #4682B4;" href="#contact">Contact</a></li>
+            <li><a style="text-decoration: none; color: hwb(210 26% 72%);" href="#about">About</a></li>
+            <li><a style="text-decoration: none; color: hwb(210 26% 72%);" href="#research">Research</a></li>
+            <li><a style="text-decoration: none; color: hwb(210 26% 72%);" href="#projects">Projects</a></li>
+                        <li><a style="text-decoration: none; color: hwb(210 26% 72%);" href="#contact">Contact</a></li>
         </ul>
     </nav>
     
     <section id="about" style="display: flex; align-items: flex-start; gap: 20px;">
         <div style="width: 900px; height: 250px; background-color: #ccc;"></div>
-        <p>I am a student at <a style="text-decoration: none; color: #4682B4;" href="https://www.fit.edu/">Florida Institute of Technology</a>, pursuing dual majors in Computer Engineering and Mathematics, with a minor in Computational Mathematics. Under the guidance of <a style="text-decoration: none; color: #4682B4;" href="https://www.ryantwhite.com/">Dr. Ryan T. White</a> and <a style="text-decoration: none; color: #4682B4;" href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/">Dr. Siddhartha Bhattacharyya</a>, I conduct research at the <a style="text-decoration: none; color: #4682B4;" href="https://research.fit.edu/nets/nets-team/">Neural TransmissionS Lab</a> and the <a style="text-decoration: none; color: #4682B4;" href="https://research.fit.edu/assist-lab/">ASSIST Lab</a>.</p>
+        <p>I am a student at <a style="text-decoration: none; color: #4682B4;" href="https://www.fit.edu/">Florida Institute of Technology</a>, pursuing dual majors in Computer Engineering and Mathematics, with a minor in Computational Mathematics. Under the guidance of <a style="text-decoration: none; color: #4682B4;" href="https://www.ryantwhite.com/">Dr. Ryan T. White</a> and <a style="text-decoration: none; color: #4682B4;" href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/">Dr. Siddhartha Bhattacharyya</a>, I conduct research at the <a style="text-decoration: none; color: #4682B4;" href="https://research.fit.edu/nets/nets-team/">Neural Transmissions Lab</a> and the <a style="text-decoration: none; color: #4682B4;" href="https://research.fit.edu/assist-lab/">ASSIST Lab</a>.</p>
+        
     </section>
+
     
     <section id="research">
         <h2 class="research-title">Research</h2>
@@ -121,21 +123,30 @@
                     <p style="font-size: 14px;">AIAA 2025-1780<br>Session: Small Satellite Novel Technologies</p>
                     
                     <div style="display: flex; gap: 10px; margin-top: 5px;">
-                        <button style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">PDF</button>
-                        <button style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">Cite</button>
+                        <a href="https://arc.aiaa.org/doi/10.2514/6.2025-1780" target="_blank" style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer; text-decoration: none; color: black; display: inline-block; text-align: center;">PDF</a>
+                        <button style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;" onclick="document.getElementById('cite-popup').style.display='block'">Cite</button>
+                    <div id="cite-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 15px; box-shadow: 0px 0px 10px rgba(0,0,0,0.2);">
+                        <p style="font-size: 14px;">@article{Alvarez2025,
+  author = {A. Issitt, T. Mahendrakar, A. Alvarez, R. T. White, A. Sizemore},
+  title = {On Optimal Observation Orbits for Learning Gaussian Splatting-Based 3D Models of Unknown Resident Space Objects},
+  journal = {AIAA 2025-1780},
+  year = {2025}
+}</p>
+                        <button onclick="navigator.clipboard.writeText('@article{Alvarez2025, author = {A. Issitt, T. Mahendrakar, A. Alvarez, R. T. White, A. Sizemore}, title = {On Optimal Observation Orbits for Learning Gaussian Splatting-Based 3D Models of Unknown Resident Space Objects}, journal = {AIAA 2025-1780}, year = {2025}}'); alert('Citation copied!');" style="margin-top: 5px; font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">Copy</button>
+                        <button onclick="document.getElementById('cite-popup').style.display='none'" style="margin-top: 5px; font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">Close</button>
+                    </div>
                         <button style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">Code</button>
                     </div>
                 </div>
             </div>
             <div class="research-item">
-                <img src="images/syscon.png" alt="AssistNet Demo" class="gif">
+                <img src="images\syscon.png" alt="AssistNet Demo" class="gif">
                 <div class="research-content">
                     <div class="paper-title">Runway vs. Taxiway: Challenges in Automated Line Identification and Notation Approaches</div>
                     <p style="font-size: 14px;">P. Ganeriwala, <strong>A. Alvarez</strong>, A. AlQahtani, S. Bhattacharyya, M. A. H. Khan, N. Neogi</p>
                     <p style="font-size: 14px;">IEEE International Systems Conference (SysCon), 2025<br>Special Session: Aerospace Systems Engineering</p>
-
                     <div style="display: flex; gap: 10px; margin-top: 5px;">
-                        <button style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">PDF</button>
+                        <a href="https://arxiv.org/abs/2501.18494" target="_blank" style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer; text-decoration: none; color: black; display: inline-block; text-align: center;">PDF</a>
                         <button style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">Cite</button>
                         <button style="font-size: 12px; padding: 5px 10px; border: 1px solid black; background: transparent; cursor: pointer;">Code</button>
                     </div>
