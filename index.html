@@ -1,269 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amy Alvarez</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            color: #333;
-        }
-        nav {
-            background: white;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            font-family: 'Roboto', sans-serif;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #4682B4;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .nav-name {
-            font-size: 1.4em;
-            font-weight: 400;
-            color: #333;
-            margin-left: 20px;
-        }
-        section {
-            padding: 50px 20px 20px;
-            max-width: 700px;
-            padding: 50px 20px 20px;
-            max-width: 700px;
-            margin: auto;
-            background: white;
-        }
-        .research-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            gap: 20px;
-        }
-        .research-item {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 40px;
-        }
-        .gif {
-            height: 258.8px;
-            width: 329.3px;
-        }
-        .research-content {
-            flex: 1;
-        }
-        .research-title {
-            text-align: center;
-            font-size: 10px;
-            font-size: 10px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            margin-bottom: 15px;
-        }
-        .research-divider {
-            width: 50%;
-            height: 1px;
-            background-color: #ccc;
-            margin: auto;
-            margin-bottom: 20px;
-        }
-        .paper-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amy Alvarez</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
 
-        .left-aligned {
-        float: left; /* Floats the element to the left */
-        margin-right: 10px; /* Adds space between the two texts */
-        }
-        .clear-float {
-        clear: both; /* Clears the float to prevent layout issues with subsequent content */
-        }
+    :root { --link:#4682B4; --text:#333; }
 
-        .inline-block-text {
-        display: inline-block; /* Makes the element behave like an inline-block */
-        vertical-align: top; /* Adjusts vertical alignment if needed */
-        margin-right: 10px; /* Adds space between the two texts */
-        }
+    body { font-family:'Poppins', sans-serif; margin:0; padding:0; background:#fff; color:var(--text); }
 
-    </style>
+    /* NAV */
+    nav { background:#fff; padding:15px; display:flex; justify-content:space-between; align-items:center; position:fixed; width:100%; top:0; left:0; z-index:1000; font-family:'Roboto', sans-serif; }
+    nav ul { list-style:none; padding:0; margin:0; display:flex; }
+    nav li { margin:0 15px; }
+    nav a { color:var(--text); text-decoration:none; font-weight:bold; }
+    .nav-name { font-size:1.4em; font-weight:400; color:var(--text); margin-left:20px; }
+
+    /* LAYOUT */
+    section { padding:50px 20px 20px; max-width:700px; margin:0 auto; background:#fff; }
+
+    /* ABOUT */
+    #about { display:flex; align-items:flex-start; gap:20px; }
+    #about .left { display:flex; flex-direction:column; align-items:center; }
+    #about img { width:200px; height:250px; object-fit:cover; border-radius:1px; }
+    #about .links { margin-top:12px; font-size:14px; text-align:center; }
+    #about .links a { text-decoration:none; color:var(--link); font-size:12px; }
+
+    /* RESEARCH */
+    .research-title { text-align:center; font-size:16px; font-weight:600; margin:0 0 12px; }
+    /* Parent stacks items vertically */
+    .research-list { display:flex; flex-direction:column; gap:22px; }
+    /* Each item: image left, text right */
+    .research-item { display:flex; align-items:flex-start; gap:24px; }
+    .research-item img { width:180px; height:150px; object-fit:cover; flex:0 0 auto; }
+    .research-content { flex:1; }
+    .paper-title { font-weight:600; font-size:13px; margin:2px 0 6px; }
+    .paper-authors, .paper-meta { font-size:13px; margin:0 0 4px; }
+    .paper-links { font-size:13px; }
+    .paper-links a { text-decoration:none; color:var(--link); }
+
+    /* Responsive: stack image/content on narrow screens */
+    @media (max-width: 720px) {
+      .research-item { flex-direction:column; }
+      .research-item img { width:100%; height:auto; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-name">Amy Alvarez</div>
-        <ul>
-            <li><a style="text-decoration: none; color: #333;" href="#about">About</a></li>
-            <li><a style="text-decoration: none; color: #333;" href="#research">Research</a></li>
-            <li><a style="text-decoration: none; color: #333;" href="#projects">Projects</a></li>
-            <li><a style="text-decoration: none; color: #333;" href="#cv">CV</a></li>
-            <li><a style="text-decoration: none; color: #333;" href="#about">About</a></li>
-            <li><a style="text-decoration: none; color: #333;" href="#research">Research</a></li>
-            <li><a style="text-decoration: none; color: #333;" href="#projects">Projects</a></li>
-            <li><a style="text-decoration: none; color: #333;" href="#cv">CV</a></li>
-        </ul>
-    </nav>
-    
-<section id="about" style="display: flex; align-items: flex-start; gap: 20px;">
+  <nav>
+    <div class="nav-name">Amy Alvarez</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </nav>
 
-  <!-- Left column: Image + Links -->
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <img src="images/" alt="" 
-         style="width: 200px; height: 250px; object-fit: cover; border-radius: 1px;">
-
-    <div style="margin-top: 12px; font-family: 'Poppins', sans-serif; font-size: 14px; text-align: center;">
-      <a href="mailto:alvareza2023@my.fit.edu" style="text-decoration: none; color: #4682B4; font-size: 12px;">Email</a> <span style="font-size: 12px;"> / </span>
-      <a href="https://scholar.google.com/citations?user=lv7qC10AAAAJ&hl=en" style="text-decoration: none; color: #4682B4; font-size: 12px;">Google Scholar</a> <span style="font-size: 12px;"> / </span>
-      <a href="https://github.com/AmyAlvarez" style="text-decoration: none; color: #4682B4; font-size: 12px;">GitHub</a>
+  <section id="about">
+    <!-- Left column: Image + Links -->
+    <div class="left">
+      <img src="images/" alt="Profile" />
+      <div class="links">
+        <a href="mailto:alvareza2023@my.fit.edu">Email</a>
+        <span style="font-size:12px;"> / </span>
+        <a href="https://scholar.google.com/citations?user=lv7qC10AAAAJ&hl=en">Google Scholar</a>
+        <span style="font-size:12px;"> / </span>
+        <a href="https://github.com/AmyAlvarez">GitHub</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Right column: Text -->
-  <div>
-    <p style="font-family: 'Poppins', sans-serif; font-size: 14px; margin-top: 15px;">
-      I am a student at 
-      <a href="https://www.fit.edu/" style="text-decoration: none; color: #4682B4;">Florida Institute of Technology</a>, 
-      pursuing majors in Computer Engineering and Mathematics, with a minor in Computational Mathematics. 
-      Under the guidance of 
-      <a href="https://www.ryantwhite.com/" style="text-decoration: none; color: #4682B4;">Dr. Ryan T. White</a> and 
-      <a href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/" style="text-decoration: none; color: #4682B4;">Dr. Siddhartha Bhattacharyya</a>, 
-      I conduct research at the 
-      <a href="https://research.fit.edu/nets/" style="text-decoration: none; color: #4682B4;">Neural Transmissions Lab</a> 
-      and the 
-      <a href="https://research.fit.edu/assist-lab/" style="text-decoration: none; color: #4682B4;">ASSIST Lab</a>.
-    </p>
+    <!-- Right column: Text -->
+    <div>
+      <p style="font-size:14px; margin-top:15px;">
+        I am a student at
+        <a href="https://www.fit.edu/" style="text-decoration:none; color:var(--link);">Florida Institute of Technology</a>,
+        pursuing majors in Computer Engineering and Mathematics, with a minor in Computational Mathematics.
+        Under the guidance of
+        <a href="https://www.ryantwhite.com/" style="text-decoration:none; color:var(--link);">Dr. Ryan T. White</a> and
+        <a href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/" style="text-decoration:none; color:var(--link);">Dr. Siddhartha Bhattacharyya</a>,
+        I conduct research at the
+        <a href="https://research.fit.edu/nets/" style="text-decoration:none; color:var(--link);">Neural Transmissions Lab</a>
+        and the
+        <a href="https://research.fit.edu/assist-lab/" style="text-decoration:none; color:var(--link);">ASSIST Lab</a>.
+      </p>
+      <p style="font-size:14px; margin-top:15px;">I like making things see and perceive :)</p>
+    </div>
+  </section>
 
-    <p style="font-family: 'Poppins', sans-serif; font-size: 14px; margin-top: 15px;">
-      I like making things see and perceive :)
-    </p>
-  </div>
-</section>
-    </section>
-    
-    <section id="research">
-        <h2 class="research-title" style="font-size: 16px;" >Research</h2>
+  <section id="research">
+    <h2 class="research-title">Research</h2>
 
-                <div class="research-container">
-            <div class="research-item"> 
-                <img src="images" alt="NeurIPS" style="height: 200px; width: 180px;">
-                <div class="research-content">
-                    <div class="paper-title" style="font-size: 13px; margin-top: 2px;">Modular Test‑time Input‑Space Refinement for Few‑Shot Segmentation</div>
-                    <p style="font-size: 13px; margin-bottom: 2px;"> M. Khan, P. Ganeriwala, <strong>A. Alvarez</strong>, S. Bhattacharyya </p>
-                    <p style="font-size: 13px; margin-top: 2px; margin-bottom: 2px;">NeurIPS 2025</p>
-                    
-                    <div style= "font-size: 13px;">
-                        <a> [Under Review]</a> 
-                    </div>
-                </div>
-            </div>
-
-
-
-
-        <div class="research-container">
-            <div class="research-item"> 
-                <img src="images" alt="AIAA" style="height: 200px; width: 180px;">
-                <div class="research-content">
-                    <div class="paper-title" style="font-size: 13px; margin-top: 2px;">AssistTaxi‑v2: A Scalable Dataset for Taxiway/Runway Scene Understanding Under
-Diverse Conditions</div>
-                    <p style="font-size: 13px; margin-bottom: 2px;">P. Ganeriwala, M. Khan, <strong>A. Alvarez</strong>, S. Bhattacharyya, N. Neogi, S. Lehman </p>
-                    <p style="font-size: 13px; margin-top: 2px; margin-bottom: 2px;">AIAA 2026<br>Session: Transformational Flight</p>
-                    
-                    <div style= "font-size: 13px;">
-                        <a> [Under Review]</a> 
-                    </div>
-                </div>
-            </div>
-
-        <div class="research-container">
-            <div class="research-item"> 
-                <img src="images/1000x1000.gif" alt="iCCV Diagram" style="height: 200px; width: 180px;">
-                <div class="research-content">
-                    <div class="paper-title" style="font-size: 13px; margin-top: 2px;">Adapt, But Don’t Forget: Fine-Tuning and Contrastive Routing for Lane
-Detection under Distribution Shift</div>
-                    <p style="font-size: 13px; margin-bottom: 2px;">M. Khan, P. Ganeriwala, S. Bhattacharyya, S. Lehman, <strong>A. Alvarez</strong>, N. Neogi </p>
-                    <p style="font-size: 13px; margin-top: 2px; margin-bottom: 2px; margin-top: 2px; ">ICCV 2025</p>
-                    
-                    <div style= "font-size: 13px;">
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">paper</a> |
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">arXiv</a> |
-                        <a href="#" style="text-decoration: none; color: #4682B4;">cite</a> 
-                    </div>
-                </div>
-            </div>
-
-        <div class="research-container">
-            <div class="research-item">
-                <img src="images/orbits.gif" alt="Orbit Path Visualization" style="height: 150px; width: 180px;object-fit: cover;">
-                <div class="research-content">
-                    <div class="paper-title" style="font-size: 13px; ">On Optimal Observation Orbits for Learning Gaussian Splatting-Based 3D Models of Unknown Resident Space Objects</div>
-                    <p style="font-size: 13px; margin-bottom: 2px;">A. Issitt, T. Mahendrakar, <strong>A. Alvarez</strong>, R. T. White, A. Sizemore</p>
-                    <p style="font-size: 13px; margin-top: 2px; margin-bottom: 2px;">AIAA 2025-1780<br>Session: Small Satellite Novel Technologies</p>
-                    
-                    <div style= "font-size: 13px;">
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">paper</a> |
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">arXiv</a> |
-                        <a href="#" style="text-decoration: none; color: #4682B4;">cite</a> 
-                    <div style= "font-size: 13px;">
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">paper</a> |
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">arXiv</a> |
-                        <a href="#" style="text-decoration: none; color: #4682B4;">cite</a> 
-                    </div>
-                </div>
-            </div>
-            <div class="research-item">
-                <img src="images/syscon.png" alt="AssistNet Demo" class="gif" style="height: 150px; width: 180px;object-fit: cover;">
-                <div class="research-content">
-                    <div class="paper-title" style="font-size: 13px; margin-top: 2px;">Runway vs. Taxiway: Challenges in Automated Line Identification and Notation <br> Approaches</div>
-                    <p style="font-size: 13px;margin-bottom: 2px;">P. Ganeriwala, <strong>A. Alvarez</strong>, A. AlQahtani, S. Bhattacharyya, M. A. H. Khan, N. Neogi</p>
-                    <p style="font-size: 13px; margin-top: 2px; margin-bottom: 2px; margin-top: 2px; ">IEEE International Systems Conference (SysCon), 2025<br>Special Session: Aerospace Systems Engineering</p>
-                    <div style= "font-size: 13px;">
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">paper</a> |
-                        <a href="link-to-pdf.pdf" style="text-decoration: none; color: #4682B4;">arXiv</a> |
-                        <a href="#" style="text-decoration: none; color: #4682B4;">cite</a> |
-                        <a href="https://github.com/" style="text-decoration: none; color: #4682B4;">code</a>
-                    </div>
-
-
-                </div>
-            </div>
+    <!-- SINGLE parent container; each paper is one .research-item below -->
+    <div class="research-list">
+      <!-- NeurIPS 2025 -->
+      <article class="research-item">
+        <img src="images" alt="NeurIPS" />
+        <div class="research-content">
+          <div class="paper-title">Modular Test‑time Input‑Space Refinement for Few‑Shot Segmentation</div>
+          <p class="paper-authors">M. Khan, P. Ganeriwala, <strong>A. Alvarez</strong>, S. Bhattacharyya</p>
+          <p class="paper-meta">NeurIPS 2025</p>
+          <div class="paper-links"><a>[Under Review]</a></div>
         </div>
-    </section>
+      </article>
 
-    
-    <footer>
-        <p>
-            <center><div style="font-size: 12px;">&copy; 2025 Amy Alvarez. All rights reserved.</div>
+      <!-- AIAA 2026 (AssistTaxi‑v2) -->
+      <article class="research-item">
+        <img src="images" alt="AIAA" />
+        <div class="research-content">
+          <div class="paper-title">AssistTaxi‑v2: A Scalable Dataset for Taxiway/Runway Scene Understanding Under Diverse Conditions</div>
+          <p class="paper-authors">P. Ganeriwala, M. Khan, <strong>A. Alvarez</strong>, S. Bhattacharyya, N. Neogi, S. Lehman</p>
+          <p class="paper-meta">AIAA 2026 · Session: Transformational Flight</p>
+          <div class="paper-links"><a>[Under Review]</a></div>
+        </div>
+      </article>
 
-            </center>
-        </p>
-        <p>
-            <center><div style="font-size: 12px;">&copy; 2025 Amy Alvarez. All rights reserved.</div>
+      <!-- ICCV 2025 -->
+      <article class="research-item">
+        <img src="images/1000x1000.gif" alt="ICCV Diagram" />
+        <div class="research-content">
+          <div class="paper-title">Adapt, But Don’t Forget: Fine‑Tuning and Contrastive Routing for Lane Detection under Distribution Shift</div>
+          <p class="paper-authors">M. Khan, P. Ganeriwala, S. Bhattacharyya, S. Lehman, <strong>A. Alvarez</strong>, N. Neogi</p>
+          <p class="paper-meta">ICCV 2025</p>
+          <div class="paper-links">
+            <a href="link-to-pdf.pdf">paper</a> |
+            <a href="link-to-pdf.pdf">arXiv</a> |
+            <a href="#">cite</a>
+          </div>
+        </div>
+      </article>
 
-            </center>
-        </p>
-    </footer>
+      <!-- AIAA 2025‑1780 (3DGS Orbits) -->
+      <article class="research-item">
+        <img src="images/orbits.gif" alt="Orbit Path Visualization" />
+        <div class="research-content">
+          <div class="paper-title">On Optimal Observation Orbits for Learning Gaussian Splatting‑Based 3D Models of Unknown Resident Space Objects</div>
+          <p class="paper-authors">A. Issitt, T. Mahendrakar, <strong>A. Alvarez</strong>, R. T. White, A. Sizemore</p>
+          <p class="paper-meta">AIAA 2025‑1780 · Session: Small Satellite Novel Technologies</p>
+          <div class="paper-links">
+            <a href="link-to-pdf.pdf">paper</a> |
+            <a href="link-to-pdf.pdf">arXiv</a> |
+            <a href="#">cite</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IEEE SysCon 2025 (Runway vs Taxiway) -->
+      <article class="research-item">
+        <img src="images/syscon.png" alt="AssistNet Demo" />
+        <div class="research-content">
+          <div class="paper-title">Runway vs. Taxiway: Challenges in Automated Line Identification and Notation Approaches</div>
+          <p class="paper-authors">P. Ganeriwala, <strong>A. Alvarez</strong>, A. AlQahtani, S. Bhattacharyya, M. A. H. Khan, N. Neogi</p>
+          <p class="paper-meta">IEEE International Systems Conference (SysCon), 2025 · Special Session: Aerospace Systems Engineering</p>
+          <div class="paper-links">
+            <a href="link-to-pdf.pdf">paper</a> |
+            <a href="link-to-pdf.pdf">arXiv</a> |
+            <a href="#">cite</a> |
+            <a href="https://github.com/">code</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      <center>
+        <div style="font-size:12px">&copy; 2025 Amy Alvarez. All rights reserved.</div>
+      </center>
+    </p>
+  </footer>
 </body>
 </html>
