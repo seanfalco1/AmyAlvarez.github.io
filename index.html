@@ -42,19 +42,24 @@
     .paper-links { font-size:13px; }
     .paper-links a { text-decoration:none; color:var(--link); }
 
-    /* Responsive: stack image/content on narrow screens */
-    @media (max-width: 720px) {
-      #about { flex-direction: column; align-items: center; }
-      .research-item { flex-direction:column; align-items:center; text-align:center; }
-      .research-item img { width:150px; height:auto; }
-      .research-content { text-align:left; }
-    
     /* PROJECTS */
     .projects-title { text-align:center; font-size:16px; font-weight:600; margin:0 0 12px; }
     .projects-list { display:flex; flex-direction:column; gap:22px; }
     .projects-item { display:flex; align-items:flex-start; gap:24px; }
     .projects-item img { width:180px; height:auto; object-fit:cover; flex:0 0 auto; }
     .projects-content { flex:1; }
+    
+    /* Responsive: stack image/content on narrow screens */
+    @media (max-width: 720px) {
+      #about { flex-direction: column; align-items: center; }
+      .research-item { flex-direction:column; align-items:center; text-align:center; }
+      .research-item img { width:150px; height:auto; }
+      .research-content { text-align:left; }
+      .projects-item { flex-direction:column; align-items:center; text-align:center; }
+      .projects-item img { width:150px; height:auto; }
+      .projects-content { text-align:left; }
+    
+    
       
     }
   </style>
