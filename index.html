@@ -13,16 +13,16 @@
     body { font-family:'Poppins', sans-serif; margin:0; padding:0; background:#fff; color:var(--text); }
 
     /* NAV */
-    nav { background:#fff; padding:15px 0; position:fixed; width:100%; top:0; left:0; z-index:1000; }
+    nav { background:#fff; position:fixed; width:100%; top:0; left:0; z-index:1000; }
     /* added for header alignment */
-    .nav-container { max-width: 700px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .nav-name { font-size: 1.4em; font-weight: 400;color: var(--text); margin-left: 10px; }
-    .nav-menu { display: flex; align-items: center; gap: 20px; margin-right: 10px; list-style: none; padding: 0; }
+    .nav-container { max-width: 700px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 10px; }
+    .nav-name { font-size: 1.4em; font-weight: 400;color: var(--text); margin: 0; }
+    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
     .nav-menu li {margin: 0;}
     .nav-menu a { color: var(--text); text-decoration: none; font-weight: bold; }
 
     /* LAYOUT */
-    section { padding:90px 20px 20px; max-width:700px; margin:0 auto; background:#fff; }
+    section { padding: 90px 20px 20px; max-width:700px; margin:0 auto; background:#fff; }
 
     /* ABOUT */
     #about { display:flex; align-items:flex-start; gap:20px; }
@@ -44,6 +44,7 @@
 
     /* Responsive: stack image/content on narrow screens */
     @media (max-width: 720px) {
+      #about { flex-direction: column; align-items: center; }
       .research-item { flex-direction:column; align-items:center; text-align:center; }
       .research-item img { width:150px; height:auto; }
       .research-content { text-align:left; }
@@ -73,9 +74,9 @@
       <img src="images/headshot.png" alt="Profile" />
       <div class="links">
         <a href="mailto:alvareza2023@my.fit.edu">Email</a>
-        <span style="font-size:12px;"> / </span>
+        <!-- <span style="font-size:12px;"> / </span> -->
         <a href="https://scholar.google.com/citations?user=lv7qC10AAAAJ&hl=en">Google Scholar</a>
-        <span style="font-size:12px;"> / </span>
+        <!-- <span style="font-size:12px;"> / </span> -->
         <a href="https://github.com/AmyAlvarez">GitHub</a>
       </div>
     </div>
